@@ -1,0 +1,39 @@
+﻿<div class="conversion-report content-block">
+    <h4>{{::$ctrl.conversion.typeName + ($ctrl.conversion.name ? ': ' + $ctrl.conversion.name : '')}}</h4>
+    <table class="table table-hover" ng-if="::$ctrl.conversion.sources.length">
+        <thead>
+            <tr class="unigrid-head">
+                <th class="main-column-30">
+                    <a href="#" ng-click="$ctrl.sort($ctrl.sortTypeName)">{$ campaign.conversion.trafficsource $}</a>
+                    <i ng-show="$ctrl.showSorting($ctrl.sortTypeName, $ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeName)" aria-hidden="true" class="icon-caret-down"></i>
+                    <i ng-show="$ctrl.showSorting($ctrl.sortTypeName, !$ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeName)" aria-hidden="true" class="icon-caret-up"></i>
+                </th>
+                <th class="main-column-30">
+                    <a href="#" ng-click="$ctrl.sort($ctrl.sortTypeSource)">{$campaign.report.emailreports$}</a>
+                    <i ng-show="$ctrl.showSorting($ctrl.sortTypeSource, $ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeSource)" aria-hidden="true" class="icon-caret-down"></i>
+                    <i ng-show="$ctrl.showSorting($ctrl.sortTypeSource, !$ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeSource)" aria-hidden="true" class="icon-caret-up"></i>
+                </th>
+                <th class="text-right main-column-30">
+                    <a href="#" ng-click="$ctrl.sort($ctrl.sortTypeHits)">{$ conversions $}</a>
+                    <i ng-show="$ctrl.showSorting($ctrl.sortTypeHits, $ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeHits)" aria-hidden="true" class="icon-caret-down"></i>
+                    <i ng-show="$ctrl.showSorting($ctrl.sortTypeHits, !$ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeHits)" aria-hidden="true" class="icon-caret-up"></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody-hover">
+            <tr ng-repeat="source in $ctrl.conversion.sources | orderBy:$ctrl.sortType:$ctrl.sortDesc">
+                <td>{{::source.name}}</td>
+                <td>
+                    <cms-source-detail-link link="source.link"></cms-source-detail-link>
+                </td>
+                <td class="text-right">{{::source.hits}}</td>
+            </tr>
+            <tr class="summary-row">
+                <td>{$general.summary$}</td>
+                <td></td>
+                <td class="text-right">{{::$ctrl.conversion.hits}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <span ng-if="::!$ctrl.conversion.sources.length">{$ campaign.nodata $}</span>
+</div>

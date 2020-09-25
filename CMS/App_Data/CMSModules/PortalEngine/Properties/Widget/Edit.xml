@@ -1,0 +1,43 @@
+﻿<form version="2">
+    <category name="Widget container">
+        <properties>
+            <visible>true</visible>
+        </properties>
+    </category>
+    <field column="Container" visible="true" columntype="text" allowempty="true" columnsize="200" publicfield="false" guid="5b74cfb7-4e8b-4570-a4cb-c6fa20f2171e">
+        <properties>
+            <fielddescription>{$documentation.widgetproperties.container$}</fielddescription>
+            <fieldcaption>Widget container</fieldcaption>
+        </properties>
+        <settings>
+            <controlname>selectcontainer</controlname>
+        </settings>
+    </field>
+    <field column="ContainerTitle" visible="true" columntype="text" allowempty="true" columnsize="200" publicfield="false" guid="8249d912-0dd7-49db-9fab-8ccc42548f94">
+        <properties>
+            <fielddescription>{$documentation.widgetproperties.containertitle$}</fielddescription>
+            <fieldcaption>Container title</fieldcaption>
+        </properties>
+        <settings>
+            <controlname>encodingtextbox</controlname>
+        </settings>
+    </field>
+    <field column="ContainerCSSClass" columntype="text" allowempty="true" columnsize="200" publicfield="false" guid="fd006f82-42e2-4332-99e2-b5e8cdcf3f30">
+        <properties>
+            <fielddescription>{$documentation.widgetproperties.containercssclass$}</fielddescription>
+            <fieldcaption>Container CSS class</fieldcaption>
+        </properties>
+        <settings>
+            <controlname>textboxcontrol</controlname>
+        </settings>
+    </field>
+    <field column="ContainerCustomContent" columntype="longtext" allowempty="true" publicfield="false" guid="80e99300-3501-4942-a554-ca545fda3e5a">
+        <properties>
+            <fielddescription>{$documentation.widgetproperties.containercustomcontent$}</fielddescription>
+            <fieldcaption>Container custom content</fieldcaption>
+        </properties>
+        <settings>
+            <controlname>encodingtextbox</controlname>
+        </settings>
+    </field>
+</form>

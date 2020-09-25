@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.DataCom.Web.UI</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.DataCom.Web.UI.DataComForm">
+            <summary>
+            Provides UI elements to display and edit CMS contact (or account) and possibly update if from the specified Data.com contact (or company).
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Web.UI.DataComForm.mItems">
+            <summary>
+            A dictionary of form field name/form item pairs.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Web.UI.DataComForm.mEntity">
+            <summary>
+            A Data.com entity.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Web.UI.DataComForm.mMergeHint">
+            <summary>
+            A value indicating whether this control should suggest entity attributes suitable for CMS object update.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Web.UI.DataComForm.mMergeHintAttributes">
+            <summary>
+            An array of form field names that are the object of the merge hint.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Web.UI.DataComForm.mFormatter">
+            <summary>
+            An object that formats values of Data.com contact (or company) attributes.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.Restore(CMS.Base.IDataContainer)">
+            <summary>
+            Provides the form fields with the values from the specified CMS contact (or account).
+            </summary>
+            <param name="data">CMS contact (or account).</param>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.Store">
+            <summary>
+            Saves the values of the form fields to the CMS contact (or account) assigned to this forms and returns the value indicating whether the operation was successful.
+            </summary>
+            <returns>True if the operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.Validate">
+            <summary>
+            Validates the form fields and returns the value indicating whether validation was successful.
+            </summary>
+            <returns>True if validation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.Merge">
+            <summary>
+            Merges the Data.com contact (or company) attribute values with the CMS contact (or account) form field values according to the user choice.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.OnPreRender(System.EventArgs)">
+            <summary>
+            OnPreRender event.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.LoadData(CMS.Base.IDataContainer)">
+            <summary>
+            This method is overridden for a specific purpose and shouldn't be changed.
+            </summary>
+            <param name="data">CMS contact (or account).</param>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.LoadDefaultLayout">
+            <summary>
+            This method is overridden for a specific purpose and shouldn't be changed.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.SaveControlValue(System.String,CMS.FormEngine.Web.UI.FormEngineUserControl)">
+            <summary>
+            This method is overridden for a specific purpose and shouldn't be changed.
+            </summary>
+            <param name="columnName">The name of the column.</param>
+            <param name="userControl">The form control.</param>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.MergeFormState">
+            <summary>
+            Updates the form fields values with the selected Data.com contact (or company) attribute values, and returns a dictionary of form field name/original value pairs.
+            </summary>
+            <returns>A dictionary of form field name/original value pairs.</returns>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComForm.RestoreFormState(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Restores the form field values to the specified values.
+            </summary>
+            <param name="formFieldValues">A dictionary of form field name/original value pairs.</param>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.Items">
+            <summary>
+            Gets the dictionary of form field name/form item pairs.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.EntityInfo">
+            <summary>
+            Gets or sets the Data.com entity info.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.EntityMapping">
+            <summary>
+            Gets or sets the mapping of entity attributes to form fields.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.EntityAttributeMapperFactory">
+            <summary>
+            Gets or sets the factory that creates instances of entity attribute mappers for the specified entity attributes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.Entity">
+            <summary>
+            Gets or sets the Data.com entity.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.MergeHint">
+            <summary>
+            Gets or sets the value indicating whether this control should suggest entity attributes suitable for CMS object update.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.MergeHintAttributes">
+            <summary>
+            Gets or sets the array of form field names that are the object of the merge hint.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.BuyContactEnabled">
+            <summary>
+            Gets or sets the value indicating whether this form provides UI to buy a contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.EntityAttributeFormatter">
+            <summary>
+            Gets or sets the object that formats values of Data.com contact (or company) attributes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComForm.ParametersIdentifier">
+            <summary>
+            Gets or sets the unique identifier to pass the parameters on to the Buy contact dialog window.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Web.UI.DataComFormLayout">
+            <summary>
+            Data com form layout.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Web.UI.DataComFormLayout.mDataComForm">
+            <summary>
+            The instance of the DataComForm that uses this layout.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.#ctor(CMS.DataCom.Web.UI.DataComForm)">
+            <summary>
+            Initializes a new instance of the Data.com form layout with the specified form and its panel.
+            </summary>
+            <param name="form">The Data.com form.</param>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.LoadLayout">
+            <summary>
+            Creates layout for the Data.com form.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.CreateBuyContactButton(CMS.DataCom.Contact)">
+            <summary>
+            Creates a button to buy the specified contact, and returns it.
+            </summary>
+            <param name="contact">The contact to buy.</param>
+            <returns>A button to buy the specified contact.</returns>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.InitializeBuyContactButton(CMS.Base.Web.UI.LocalizedButton)">
+            <summary>
+            Initializes the specified button to open a modal dialog.
+            </summary>
+            <param name="button">The button to buy a contact.</param>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.CreateLastModifiedLiteral(System.DateTime)">
+            <summary>
+            Creates a control with localized date and time of last Data.com contact (or company) modification, and retuns it.
+            </summary>
+            <param name="value">Date and time of last Data.com contact (or company) modification.</param>
+            <returns>A control with localized date and time of last Data.com contact (or company) modification.</returns>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.InitializeCountrySelector(System.Web.UI.Control,CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Initializes a country selector with a dependent state field.
+            </summary>
+            <param name="innerControl">The country selector control.</param>
+            <param name="field">The form field info.</param>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.CreateFormItem(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Creates a form item, i.e., a set of controls and objects related to the mapping of the specified form field to an entity attribute, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field info.</param>
+            <returns>A form item, i.e., a set of controls and objects related to the mapping of the specified form field to an entity attribute.</returns>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormLayout.CreateDataComCheckbox(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Creates a checkbox control for the specified form field info that enables Data.com attribute merging, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field info.</param>
+            <returns>A checkbox control for the specified form field info.</returns>
+        </member>
+        <member name="T:CMS.DataCom.Web.UI.CountrySelectorAdapter">
+            <summary>
+            Provides a compatibility layer between the DataComForm and the CountrySelector control.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Web.UI.DataComFormItem">
+            <summary>
+            Represents a set of controls and objects related to the mapping of a form field to an entity attribute.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormItem.Initialize(System.Object,CMS.Base.StringSafeDictionary{CMS.FormEngine.Web.UI.EditingFormControl},System.Boolean,System.String[])">
+            <summary>
+            Initializes data com form item.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.DataComFormItem.AttributeValueEquals(System.Object,System.Object,CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether the specified attribute value is equal to the specified field value.
+            </summary>
+            <param name="attributeValue">The entity attribute value compatible with the specified form field.</param>
+            <param name="value">The form field value.</param>
+            <param name="field">The form field.</param>
+            <returns>True, if the specified attribute value is equal to the specified field value; otherwise, false.</returns>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComFormItem.CheckboxControl">
+            <summary>
+            Checkbox control.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComFormItem.FieldInfo">
+            <summary>
+            Form field info.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComFormItem.EntityAttributeInfo">
+            <summary>
+            Entity attribute info.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComFormItem.EntityAttributeMapper">
+            <summary>
+            Entity attribute mapper.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Web.UI.DataComFormItem.EntityAttributeFormatter">
+            <summary>
+            Entity attribute formatter.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Web.UI.CMSDataComDialogPage">
+            <summary>
+            Represents a modal dialog web page of Data.com module.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.CMSDataComDialogPage.AuthorizeRequest">
+            <summary>
+            Checks the license and redirects the user to a special page when the license does not include Data.com integration.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Web.UI.CMSDataComPage">
+            <summary>
+            Represents a web page of Data.com module.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.CMSDataComPage.AuthorizeReadRequest(CMS.ContactManagement.ContactInfo)">
+            <summary>
+            Checks the license and read permissions for the specified contact and redirects the user to a special page when there is a problem.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.CMSDataComPage.AuthorizeModifyRequest(CMS.ContactManagement.ContactInfo)">
+            <summary>
+            Checks the license and modify permissions for the specified contact and redirects the user to a special page when there is a problem.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.CMSDataComPage.AuthorizeReadRequest(CMS.ContactManagement.AccountInfo)">
+            <summary>
+            Checks the license and read permissions for the specified account and redirects the user to a special page when there is a problem.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Web.UI.CMSDataComPage.AuthorizeModifyRequest(CMS.ContactManagement.AccountInfo)">
+            <summary>
+            Checks the license and modify permissions for the specified account and redirects the user to a special page when there is a problem.
+            </summary>
+        </member>
+    </members>
+</doc>

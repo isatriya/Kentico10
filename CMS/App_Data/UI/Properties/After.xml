@@ -1,0 +1,52 @@
+﻿<form>
+  <category name="Javascript" caption="{$resource.ui.javascript$}" collapsible="true" collapsedbydefault="true" />
+  <field column="Javascript" fieldcaption="{$documentation.property.inlinescript.caption$}" fielddescription="{$documentation.property.inlinescript$}" visible="true" columntype="LongText" fieldtype="CustomUserControl" allowempty="true" publicfield="false" spellcheck="false" guid="95FAFE9B-858F-4A15-BE47-822261EBBE85" >
+      <settings>
+        <Width>70%</Width>
+        <SingleMacroMode>False</SingleMacroMode>
+        <EnableViewState>False</EnableViewState>
+        <controlname>macroeditor</controlname>
+        <ShowLineNumbers>False</ShowLineNumbers>
+        <IsTextArea>True</IsTextArea>
+        <Height>160</Height>
+        <ShowMacroSelector>False</ShowMacroSelector>
+        <Wrap>True</Wrap>
+        <EditorMode>1</EditorMode>
+        <Language>3</Language>
+        <SingleLineMode>False</SingleLineMode>
+        <EnableSections>True</EnableSections>
+        <AutoSize>False</AutoSize>
+        <SupportPasteImages>False</SupportPasteImages>
+        <EnablePositionMember>True</EnablePositionMember>
+      </settings>
+  </field>
+  <field column="JavascriptLinkedFile" fieldcaption="{$documentation.property.linkedfile.caption$}" fielddescription="{$documentation.property.linkedfile$}" visible="true" columntype="text" columnsize="200" fieldtype="CustomUserControl" allowempty="true" publicfield="false" spellcheck="false" guid="16C73D35-04A9-43BF-B03E-8770F2050BB7" >
+    <settings>
+      <ControlName>FileSystemSelector</ControlName>
+      <StartingPath>~/CMSScripts/Custom</StartingPath>
+      <SelectedPathPrefix>~/CMSScripts/Custom</SelectedPathPrefix>
+    </settings>
+  </field>
+  <category name="CodeBehind" caption="{$documentation.property.codebehind$}" collapsible="true" collapsedbydefault="true" visible="true" />
+  <field column="PageExtenderAssemblyName" fieldcaption="{$documentation.property.pageextender.caption$}" fielddescription="{$documentation.property.pageextender$}" visible="true" columntype="text" columnsize="100" fieldtype="CustomUserControl" allowempty="true" publicfield="false" guid="840d28be-d99c-416a-ad1d-296e59eaa4d9">
+    <settings>
+      <ShowInterfaces>False</ShowInterfaces>
+      <BaseClassName>CMS.Base.Web.UI.PageExtender, CMS.Base.Web.UI</BaseClassName>
+      <ClassNameColumnName>PageExtenderClassName</ClassNameColumnName>
+      <ShowClasses>True</ShowClasses>
+      <ShowEnumerations>False</ShowEnumerations>
+      <controlname>assemblyclassselector</controlname>
+    </settings>
+  </field>
+  <field column="PageExtenderClassName" columntype="text" columnsize="100" fieldtype="CustomUserControl" allowempty="true"  publicfield="false" guid="8ae4d0d6-7f78-4769-a281-c2106dcbb541">
+    <settings>
+      <controlname>textboxcontrol</controlname>
+    </settings>
+  </field>
+  <category name="Custom" caption="{$General.custom$}" collapsible="true" collapsedbydefault="true" />
+  <field column="CustomProperties" fieldcaption="{$documentation.property.custom.caption$}" fielddescription="{$documentation.property.custom$}" visible="true" columntype="longtext" fieldtype="CustomUserControl" allowempty="true" publicfield="false" spellcheck="false" guid="BEA51770-00C1-4B70-89E2-BF54C235D332" displayinsimplemode="false" >
+    <settings>
+      <ControlName>UIElementPropertiesEditor</ControlName>
+    </settings>
+  </field>
+</form>

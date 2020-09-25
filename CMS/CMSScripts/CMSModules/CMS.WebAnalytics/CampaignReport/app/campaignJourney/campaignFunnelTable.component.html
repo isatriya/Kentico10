@@ -1,0 +1,55 @@
+﻿<div class="journey-report content-block">
+    <div ng-if="::$ctrl.conversions.length && $ctrl.sources.length">
+        <h4>{$campaign.report.channelperformance$}</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr class="unigrid-head">
+                    <th class="main-column-10">
+                        <a href="#" ng-click="$ctrl.sort($ctrl.sortTypeName)">{$ campaign.conversion.trafficsource $}</a>
+                        <i ng-show="$ctrl.showSorting($ctrl.sortTypeName, $ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeName)" aria-hidden="true" class="icon-caret-down"></i>
+                        <i ng-show="$ctrl.showSorting($ctrl.sortTypeName, !$ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeName)" aria-hidden="true" class="icon-caret-up"></i>
+                    </th>
+                    <th ng-if="::$ctrl.hasDetails" class="main-column-10">
+                        <a href="#" ng-click="$ctrl.sort($ctrl.sortTypeSource)">{$campaign.report.emailreports$}</a>
+                        <i ng-show="$ctrl.showSorting($ctrl.sortTypeSource, $ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeSource)" aria-hidden="true" class="icon-caret-down"></i>
+                        <i ng-show="$ctrl.showSorting($ctrl.sortTypeSource, !$ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeSource)" aria-hidden="true" class="icon-caret-up"></i>
+                    </th>
+                    <th class="hits-column text-right main-column-10" ng-repeat="conversion in $ctrl.conversions track by $index">
+                        <a href="#" ng-click="$ctrl.sort($index)" title="{{::$ctrl.formatConversionName(conversion)}}">{{:: conversion.name || conversion.typeName }}</a>
+                        <i ng-show="$ctrl.showSorting($index, $ctrl.sortDesc)" ng-click="$ctrl.sort($index)" aria-hidden="true" class="icon-caret-down"></i>
+                        <i ng-show="$ctrl.showSorting($index, !$ctrl.sortDesc)" ng-click="$ctrl.sort($index)" aria-hidden="true" class="icon-caret-up"></i>
+                    </th>
+                    <th class="text-right main-column-10">
+                        <a href="#" ng-click="$ctrl.sort($ctrl.sortTypeRate)" title="{$campaign.report.conversionrateexplanation$}">{$ campaign.conversionrate $}</a>
+                        <i ng-show="$ctrl.showSorting($ctrl.sortTypeRate, $ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeRate)" aria-hidden="true" class="icon-caret-down"></i>
+                        <i ng-show="$ctrl.showSorting($ctrl.sortTypeRate, !$ctrl.sortDesc)" ng-click="$ctrl.sort($ctrl.sortTypeRate)" aria-hidden="true" class="icon-caret-up"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="tbody-hover">
+                <tr ng-repeat="source in $ctrl.sources | orderBy:$ctrl.sortValueExtractor:$ctrl.sortDesc">
+                    <td>{{::source.name}}</td>
+                    <td ng-if="::$ctrl.hasDetails">
+                        <cms-source-detail-link link="source.link"></cms-source-detail-link>
+                    </td>
+                    <td class="text-right" ng-repeat="hitCount in source.hits track by $index">
+                        {{::hitCount}}
+                    </td>
+                    <td class="text-right">{{::source.conversionRate | percentage:0}}</td>
+                </tr>
+                <tr class="summary-row">
+                    <td>{$general.summary$}</td>
+                    <td ng-if="::$ctrl.hasDetails"></td>
+                    <td class="text-right" ng-repeat="conversion in $ctrl.conversions track by $index">
+                        {{::conversion.hits}}
+                    </td>
+                    <td class="text-right">
+                        {{::$ctrl.conversionRate | percentage:0}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <span ng-if="::!$ctrl.conversions.length">{$ campaign.nojourneystep $}</span>
+    <span ng-if="::$ctrl.conversions.length && !$ctrl.sources.length">{$ campaign.nodata $}</span>
+</div>
